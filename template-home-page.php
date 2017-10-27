@@ -94,6 +94,51 @@ get_header(); ?>
 							<?php endforeach; ?> 
 						<?php endif; ?>
 					</div><!-- .row -->
+					
+					<div class="row skillBox">
+						<div class="module-caption text-center">
+						<div class="separator">
+									<span><i class="fa fa-circle"></i></span>
+								</div><!-- .separator -->
+						</div>
+						<?php
+							
+							$conn = mysqli_connect(HOST, USERNAME, PASSWORD, DBNAME);
+							if (!$conn) {
+								die("Connection failed: " . mysqli_connect_error());
+							}
+							$sql = "SELECT DISTINCT category FROM Skills";
+							$result = mysqli_query($conn, $sql);
+							
+							if (mysqli_num_rows($result) > 0) {
+								while($row = mysqli_fetch_assoc($result)) {
+									$cat[] = $row["category"];
+								}
+							} else {
+								echo "0 results";
+							}
+							
+							$i = 0;
+							foreach($cat as $key=>$value) {
+								
+								echo "<div class='skillssub sub" . $i . "'>";
+								echo "<h3>" . $value . "</h3>";
+								$sql = "SELECT category, skill, years FROM Skills WHERE category='$value'"; 
+								$result = mysqli_query($conn, $sql);
+								if (mysqli_num_rows($result) > 0) {
+									while($row = mysqli_fetch_array($result)) {
+										echo "<div class='block'>" . $row["skill"] . "<br><span>YEARS OF EXPERIENCE:</span> " . $row["years"] . "</div>";
+									}	
+								} else {
+									echo "0 results";
+								}
+								echo "</div>";
+								$i++;
+							}
+							mysqli_close($conn);
+							
+						?>
+					</div>
 				</div><!-- .container -->
 			</section><!-- #service -->
 			<div id="portfolio"></div>
@@ -179,6 +224,10 @@ get_header(); ?>
 									echo '<h2>' . strip_tags( html_entity_decode( Kirki::get_option( 'front_page_ver_promo_title' ) ), '<span>' ) . '</h2>';
 								}
 							?>
+							
+							<div class="separator">
+									<span><i class="fa fa-circle"></i></span>
+								</div><!-- .separator -->
 
 							<?php
 								if ( Kirki::get_option( 'front_page_ver_promo_content' ) != '' ) {

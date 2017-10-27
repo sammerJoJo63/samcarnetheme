@@ -9,7 +9,11 @@
  * @package BeOnePage
  */
 
-?><!DOCTYPE html>
+?>
+
+<?php require 'config.php'; ?>
+
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -18,6 +22,8 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/masonry.js"></script>
 </head>
 
 <body <?php body_class(); ?>>

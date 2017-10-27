@@ -2083,3 +2083,55 @@ figcaption {
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
 	opacity: 0;
 }
+
+
+
+/*--------------------------------------------------------------
+6.2 Magnific Popup
+--------------------------------------------------------------*/
+
+.skillBox, .skillBox .skillssub {
+	position: relative;
+	padding: 0 !important;
+}
+
+.block {
+    display: block;
+    position: absolute;
+    background: #181a1c;
+    border: 1px solid #eceff3;
+    color: #eceff3;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    float: left;
+    text-align: center;
+    width: 350px;
+    padding: 15px;
+    font-family: "Raleway", sans-serif;
+}
+
+.block span {
+	color: #00e285;
+}
+
+.skillBox h3 {
+	text-align: center;
+}
+
+.skillBox .module-caption.text-center {
+	margin-bottom: 70px;
+}
+
+@media (max-width: 500px) {
+	.block {
+		width: 225px;
+	}
+}
+
+@media (max-width: 350px) {
+	.block {
+		width: 180px;
+	}
+}
