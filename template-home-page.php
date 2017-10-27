@@ -127,7 +127,7 @@ get_header(); ?>
 								$result = mysqli_query($conn, $sql);
 								if (mysqli_num_rows($result) > 0) {
 									while($row = mysqli_fetch_array($result)) {
-										echo "<div class='block'>" . $row["skill"] . "<br><span>YEARS OF EXPERIENCE:</span> " . $row["years"] . "</div>";
+										echo "<div class='block'><h5>" . $row["skill"] . "</h5><span>Years of Experience:</span> " . $row["years"] . "</div>";
 									}	
 								} else {
 									echo "0 results";
@@ -278,7 +278,7 @@ get_header(); ?>
 							<p>Mostly on Apple devices. I don't hate Windows; I hate Windows 8</p>
 							<p>I'm always looking for the next coding trends, including frameworks, tools, and libraries</p>
 							<p>My favorite IDE is Coda on a Mac</p>
-							<p>I love listening to the TWiT network, especially "The Tech Guy" and "iOS Today"</p>
+							<p>I love listening to the TWiT network, especially "The Tech Guy", "The New Screensavers", and "iOS Today"</p>
 							
 						</div>
 							
